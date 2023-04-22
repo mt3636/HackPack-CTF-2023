@@ -10,5 +10,9 @@ We want to see if there's a table storing this information, so we do a `UNION SE
 
 ![](https://github.com/mt3636/HackPack-CTF-2023/blob/main/WolfHowl/images/tabledoesntexist.png)
 
-So, we now need to get all the tables in the database, so we enter `" UNION SELECT table_name, NULL, NULL, NULL FROM information_schema.tables -- "` and get the page to display all the tables in the database.
+So, we now need to get all the tables in the database, so we enter `" UNION SELECT table_name, NULL, NULL, NULL FROM information_schema.tables -- "` to get the page to display them.
+
+![](https://github.com/mt3636/HackPack-CTF-2023/blob/main/WolfHowl/images/databasetables.png)
+
+We're interested in the employee table because of the elevated privileges that'd be associated with it. `" UNION SELECT column_name, NULL, NULL, NULL FROM information_schema.columns WHERE table_name="employee" -- "` will get us all the columns of information associated with all of the employees.
 
