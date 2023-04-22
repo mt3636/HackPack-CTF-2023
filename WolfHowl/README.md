@@ -29,4 +29,6 @@ Look at that! We have all the employee emails and passwords in plaintext right i
 
 Yay, we get our flag displayed on the page after logging in!
 
+![](https://github.com/mt3636/HackPack-CTF-2023/blob/main/WolfHowl/images/flag.png)
+
     flag{art_decorates_space_but_music_decorates_time}
