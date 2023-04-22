@@ -14,5 +14,9 @@ So, we now need to get all the tables in the database, so we enter `" UNION SELE
 
 ![](https://github.com/mt3636/HackPack-CTF-2023/blob/main/WolfHowl/images/databasetables.png)
 
-We're interested in the employee table because of the elevated privileges that'd be associated with it. `" UNION SELECT column_name, NULL, NULL, NULL FROM information_schema.columns WHERE table_name="employee" -- "` will get us all the columns associated with the employee table.
+We're interested in the employee table because of the elevated privileges that'd be associated with it. `" UNION SELECT column_name, NULL, NULL, NULL FROM information_schema.columns WHERE table_name="employee" -- "` will get us all the columns associated with the employee table--maybe even columns for emails and passwords.
+
+![](https://github.com/mt3636/HackPack-CTF-2023/blob/main/WolfHowl/images/employeecolumns.png)
+
+Sure enough, we see the email and password columns at the bottom, so let's get all employee emails and passwords with `" UNION SELECT Email, Password, NULL, NULL FROM employee -- "`:
 
