@@ -18,7 +18,7 @@ We're interested in the employee table because of the elevated privileges that'd
 
 ![](https://github.com/mt3636/HackPack-CTF-2023/blob/main/WolfHowl/images/employeecolumns.png)
 
-Sure enough, we see the email and password columns at the bottom, so let's get all employee emails and passwords with `" UNION SELECT Email, Password, NULL, NULL FROM employee -- "`:
+Sure enough, we see the email and password columns at the bottom, so let's get all the employee emails and passwords with `" UNION SELECT Email, Password, NULL, NULL FROM employee -- "`:
 
 ![](https://github.com/mt3636/HackPack-CTF-2023/blob/main/WolfHowl/images/usernamesandpasswords.png)
 
